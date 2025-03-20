@@ -4,7 +4,6 @@ import { fetchPostsAPI } from "../../../../network/api/postsapi";
 import { PostType } from "../../../../types/Post";
 import Post from "../Post/Post";
 import { useDispatch } from "react-redux";
-import { fetchPostsAction } from "../../../../slices/postsSlice";
 import { fetchCommentForPostAction } from "../../../../slices/commentsSlice";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import { useNavigate } from "react-router-dom";
@@ -14,13 +13,13 @@ const PostsList: FC = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const getPosts = async () => {
-    const response = await fetchPostsAPI();
-    if (response && response.data) {
-      setPosts([...posts, response.data.posts[0]]);
-    }
-    console.log(response);
-  };
+  // const getPosts = async () => {
+  //   const response = await fetchPostsAPI();
+  //   if (response && response.data) {
+  //     setPosts([...posts, response.data.posts[0]]);
+  //   }
+  //   console.log(response);
+  // };
 
   useEffect(() => {
     // getPosts();
